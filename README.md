@@ -16,8 +16,8 @@ We will create simple event which fired an event on call of rest api end points.
 
 We will generate UserRegistered (Event) and SendWelcomeEmail (Listener) file using CLI command.
 
-php artisan make:event UserRegistered
-php artisan make:listener SendWelcomeEmail --event="UserRegistered"
+    php artisan make:event UserRegistered
+    php artisan make:listener SendWelcomeEmail --event="UserRegistered"
 
 We will make one entry into app/Providers/EventServiceProvide.php file, this file is used to register all of your application’s event listeners.
 
