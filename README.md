@@ -12,20 +12,20 @@ The listeners will listen that event and react accordingly.The listeners is a pr
 
 **Lets Create Events In Laravel 6.2**
 
-We will create simple event which fired an event on call of rest api end points.The listener will listen that event and print log message.
+We will create simple event which fired an event.The listener will listen that event and print log message.
 
-We will generate UserRegistered (Event) and SendWelcomeEmail (Listener) file using CLI command.
+We will generate **UserRegistered (Event)** and **SendWelcomeEmail (Listener)** file using CLI command.
 
     php artisan make:event UserRegistered
     php artisan make:listener SendWelcomeEmail --event="UserRegistered"
 
-We will make one entry into app/Providers/EventServiceProvide.php file, this file is used to register all of your application’s event listeners.
+We will make one entry into **app/Providers/EventServiceProvide.php** file, this file is used to register all of your application’s event listeners.
 
-`UserRegistered::class =>[
+    UserRegistered::class =>[
             SendWelcomeEmail::class,
-        ],`
+        ],
         
-Now modified handle() method into SendWelcomeEmail.php file, that will have some program, that will execute when the even will occurred.
+Now modified **handle()** method into **SendWelcomeEmail.php** file, that will have some program, that will execute when the even will occurred.
 
     public function handle(UserRegistered $event)
     {
@@ -40,7 +40,7 @@ Now modified handle() method into SendWelcomeEmail.php file, that will have some
             Log::info('Error'. $e->getMessage());
         }
     }
-In our UserRegistered event we pass user object to it’s constructor. This object will then pass to the event listener.
+In our **UserRegistered** event we pass user object to it’s constructor. This object will then pass to the event listener.
 
     <?php
 
@@ -71,8 +71,8 @@ In our UserRegistered event we pass user object to it’s constructor. This obje
 
 **How To dispatch Event In Laravel ?**
 
-Let's Create one WelcomeEventContoller and that controller we will dispatch Event.
-There another way to fire event by creating new object of Event.
+Let's Create one **WelcomeEventContoller** and that controller we will **dispatch Event**.
+There another way to fire event by **creating new object of Event**.
 
     public function display()
     {
