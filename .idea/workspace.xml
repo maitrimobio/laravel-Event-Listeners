@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73a2b206-8b2b-4af6-b310-67e4936c17a7" name="Default Changelist" comment="" />
+    <list default="true" id="73a2b206-8b2b-4af6-b310-67e4936c17a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeEventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendWelcomeEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendWelcomeEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +20,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -113,6 +124,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
@@ -143,6 +155,7 @@
       <workItem from="1581155894777" duration="11739000" />
       <workItem from="1581186731532" duration="308000" />
       <workItem from="1581256174031" duration="3402000" />
+      <workItem from="1581426842425" duration="1323000" />
     </task>
     <servers />
   </component>
@@ -154,6 +167,10 @@
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/59.27.1307.741@59.27.1307.741" timestamp="1581157087343" />
+    <state x="508" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1581427621430">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="508" y="322" width="399" height="149" key="NewPhpFileDialog/59.27.1307.741@59.27.1307.741" timestamp="1581427621430" />
     <state x="201" y="31" key="SettingsEditor" timestamp="1581155924379">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
@@ -162,9 +179,9 @@
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="368" y="224" key="com.intellij.ide.util.TipDialog/59.27.1307.741@59.27.1307.741" timestamp="1581256176431" />
-    <state x="375" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1581162209095">
+    <state x="375" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1581427466957">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state x="375" y="89" width="672" height="678" key="search.everywhere.popup/59.27.1307.741@59.27.1307.741" timestamp="1581162209095" />
+    <state x="375" y="89" width="672" height="678" key="search.everywhere.popup/59.27.1307.741@59.27.1307.741" timestamp="1581427466957" />
   </component>
 </project>

@@ -24,22 +24,30 @@ We will make one entry into **app/Providers/EventServiceProvide.php** file, this
     UserRegistered::class =>[
             SendWelcomeEmail::class,
         ],
+
+Change Mail Driver from **config/mail.php**
+
+    'driver' => env('MAIL_DRIVER', 'log'),
         
 Now modified **handle()** method into **SendWelcomeEmail.php** file, that will have some program, that will execute when the even will occurred.
 
     public function handle(UserRegistered $event)
-    {
-        $data = array('name' => $event->newuser['name'], 'email' => $event->newuser['email']);
-        try {
-            if(!empty($data))
-            {
-                echo 'Welcome to our Website '.$event->newuser['name'];
-                Log::info('=== Email Event Fire  ========');
+        {
+            $data = array('name' => $event->newuser['name'], 'email' => $event->newuser['email']);
+            try {
+                if (!empty($data['email'])) {
+                    Mail::send(['text' => 'mail'], $data, function ($message) use ($data) {
+                        $message->to($data['email'])->subject
+                        ('Laravel Basic Testing Mail');
+                        $message->from('noreplay@mobiosolution.com');
+                    });
+                    echo "This is Email Sent to log. Check your log file.";
+                }
+            } catch (\Exception $e) {
+                Log::info('Error' . $e->getMessage());
             }
-        } catch (\Exception $e){
-            Log::info('Error'. $e->getMessage());
         }
-    }
+
 In our **UserRegistered** event we pass user object to it’s constructor. This object will then pass to the event listener.
 
     <?php
@@ -74,6 +82,10 @@ In our **UserRegistered** event we pass user object to it’s constructor. This 
 Let's Create one **WelcomeEventContoller** and that controller we will **dispatch Event**.
 There another way to fire event by **creating new object of Event**.
 
+    /*
+     * Calling Event with method.
+     * @return array
+     */
     public function display()
     {
         $user = [
@@ -81,8 +93,8 @@ There another way to fire event by **creating new object of Event**.
             'email' => 'maitris.mobio@gmail.com',
         ];
         //call Event
-        UserRegistered::dispatch($user);
-        //event(new UserRegistered($user));
+        //UserRegistered::dispatch($user);
+        event(new UserRegistered($user));
     }
 
     Output: Welcome to our Website Maitri.

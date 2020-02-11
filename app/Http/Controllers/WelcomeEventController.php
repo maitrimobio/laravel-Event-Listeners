@@ -10,11 +10,20 @@ class WelcomeEventController extends Controller
 {
     public $user;
 
+    /**
+     * Create a new instance.
+     *
+     * @return void
+     */
     public function __construct(User $user)
     {
         $this->user = $user;
     }
 
+    /*
+     * Calling Event with method.
+     * @return array
+     */
     public function display()
     {
         $user = [

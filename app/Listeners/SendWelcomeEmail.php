@@ -30,13 +30,16 @@ class SendWelcomeEmail
     {
         $data = array('name' => $event->newuser['name'], 'email' => $event->newuser['email']);
         try {
-            if(!empty($data))
-            {
-                echo 'Welcome to our Website '.$event->newuser['name'];
-                Log::info('=== Email Event Fire  ========');
+            if (!empty($data['email'])) {
+                Mail::send(['text' => 'mail'], $data, function ($message) use ($data) {
+                    $message->to($data['email'])->subject
+                    ('Laravel Basic Testing Mail');
+                    $message->from('noreplay@mobiosolution.com');
+                });
+                echo "This is Email Sent to log. Check your log file.";
             }
-        } catch (\Exception $e){
-            Log::info('Error'. $e->getMessage());
+        } catch (\Exception $e) {
+            Log::info('Error' . $e->getMessage());
         }
     }
 }
