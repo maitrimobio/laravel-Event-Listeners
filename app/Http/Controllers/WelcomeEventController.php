@@ -27,8 +27,8 @@ class WelcomeEventController extends Controller
     public function display()
     {
         $user = [
-            'name' => 'Maitri',
-            'email' => 'maitris.mobio@gmail.com',
+            'name' => 'Testuser',
+            'email' => 'testuser@gmail.com',
         ];
         //call Event
         //UserRegistered::dispatch($user);
