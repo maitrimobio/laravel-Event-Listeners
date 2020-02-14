@@ -89,14 +89,14 @@ There another way to fire event by **creating new object of Event**.
     public function display()
     {
         $user = [
-            'name' => 'Maitri',
-            'email' => 'maitris.mobio@gmail.com',
+            'name' => 'TestUser',
+            'email' => 'testmail@gmail.com',
         ];
         //call Event
         //UserRegistered::dispatch($user);
         event(new UserRegistered($user));
     }
 
-    Output: Welcome to our Website Maitri.
+    Output: Welcome to our Website TestUser.
 
 Also add an Entry in Laravel log file when Event Fire.
